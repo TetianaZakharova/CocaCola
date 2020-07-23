@@ -25,6 +25,7 @@ h4 {
 position: absolute;
 right: 0;
 bottom: 0;
+width: 100%;
 }
 
 .header__menu {
@@ -33,29 +34,46 @@ bottom: 0;
   margin: 24px auto;
   left: 0;
   right: 0;
-  /* top: 24px;
-  left: 2%; */
   z-index: 2;
 }
 
 .nav__item {
     margin-right: 40px;
+    height: 22px;
+    overflow: hidden;
 }
+
 .item__link {
   font-family: 'Roboto Regular';  
-  color: #FFFFFF;
+  color: #D02B2B;
   font-size: 16px;
   line-height: 19px;
   transition: color 0.5s;
+  display: block;
+  position: relative;
 }
 
 .link:hover {
   text-decoration: none;
+  color: #D02B2B;
 }
 
-.item__link:hover {
-    text-decoration: none;
-    color: #D02B2B;
+.item__span {
+  display: flex;
+  height: 100%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: 0.5s;
+}
+
+.item__span--basic {
+  color: #FFFFFF;
+}
+
+.nav__item:hover .item__span {
+  transform: translateY(-100%);
 }
 
 .burger {
@@ -67,33 +85,25 @@ bottom: 0;
 }
 
 .content {
-  /* position: relative; */
   font-family: 'Risque Regular'; 
-  /* background-image: url('../img/claus.png'); */
-  /* background-position: bottom right;
-  background-repeat: no-repeat;
-  background-size: contain; */
-  /* z-index: 3; */
 }
 
 .content__title {
-  font-size: 72px;
-  line-height: 83px;
-  margin: 53px 0 20px 68px;
+  font-size: 3rem;
 }
 
+
 .content__text {
-  font-size: 38px;
+  font-size: 1.5rem;
   line-height: 44px;
-  margin: 0 0 27px 68px;
 }
 
 .content__cloud {
   position: absolute;
   width: 223px;
   height: 166px;
-  left: 40%;
-  top: 60%;
+  right: 40%;
+  bottom: 15%;
   background: #FFFFFF;
   box-shadow: 4px 5px 15px rgba(255, 255, 255, 0.25);
   border-radius: 50%;  
@@ -130,13 +140,11 @@ bottom: 0;
 .content__button {
     width: 186px;
     height: 44px;
-    /* margin: 0 0  200px 68px; */
-    margin-left: 68px;
-    margin-bottom: 50px;
     border: 2px solid #FFFFFF;
     box-sizing: border-box;
     border-radius: 20px 20px 20px 0px;
     background-color: color 0.5s;
+    align-self: center;
   }
 
   .content__button:hover  {
@@ -171,7 +179,6 @@ Snowflake */
   display: block;
   left: -175px;
   top: -430px;
-  /* bottom: 0; */
   width: 427px;
   z-index: -1;
   animation: 10s snowflake infinite linear; 
@@ -286,73 +293,52 @@ Snowflake */
 
  
 canvas {
-  /* background-color: transparent; */
   height: 100%;
   position: absolute;
-  /* z-index: 2; */
 }
-
-
 
 /* MAIN PAGE */
 
 .main {
+  padding: 3rem;
+}
+
+.main__info {
+ margin-top: -50%;
+}
+
+.gifts {
   font-family: 'Risque Regular';
   background-image: url('../img/bg-second.png');
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 80px;
+  background-position: 15% 0;
+  padding: 3rem;
   z-index: -1;
 }
 
-.main__title {
-  font-size: 56px;
-line-height: 65px;
+.gifts__title, .main__title {
+  font-size: 2.5rem;
+  line-height: 1.5;
 }
 
-.main__text {
+.gifts__text {
   margin: 30px 0;
 }
 
-.present {
-  padding: 58px 35px;
-  border: 3px solid #FFFFFF;
-  box-sizing: border-box;
-  border-radius: 20px;
+.present__img {
+  height: 170px;
 }
 
-
-.present__item {
-  width: 150px;
-  height: 150px;
-  position: relative;
-  box-sizing: border-box;
-  border-radius: 50%;
-  border: 6px solid #fff;
-  cursor: pointer;
-  z-index: 1;
-  transition: .3s;
-  background-color: #fff;
-  background-repeat: no-repeat;
-  background-size: 50%;
-  background-position: center;
-  margin-right: 32px;
-  background-image: url("../img/newYearSock.png");
+.present__img > img {
+  margin: 0 auto;
 }
 
-.present__item--active {
-  background-color: transparent;
-
-} 
-
-.present__item--sock {
-  background-image: url("../img/newYearSock.png");
+.present__img--sock {
+  height: 100%;
 }
-.present__item--cap {
-  background-image: url("../img/newYearCap.png");
-}
-.present__item--bag {
-  background-image: url("../img/newYearBag.png");
+.present__text {
+  height: 340px;
 }
 
 .present__title {
@@ -368,23 +354,28 @@ line-height: 65px;
   line-height: 33px;
 }
 
+.present__slider {
+  flex-direction: column;
+}
+
 /* CAROUSEL */
 
-.multiple-items {
+.single-item {
   margin-top: 125px;
 }
 
 .dots-style {
   position: absolute;
   display: flex;
-  justify-content: center;
-  left: -137%;
-  top: 170px;
+  justify-content: space-around;
+  left: 0;
+  top: -30%;
+  width: 100%;
 }
 
 .dots-style button {
-  width: 150px;
-  height: 150px;
+  width: 100px;
+  height: 100px;
   position: relative;
   box-sizing: border-box;
   border-radius: 50%;
@@ -396,8 +387,6 @@ line-height: 65px;
   background-repeat: no-repeat;
   background-size: 50%;
   background-position: center;
-  margin-right: 32px;
-  background-image: url("../img/newYearSock.png");
   outline: transparent;
   color: transparent;
 }
@@ -423,37 +412,193 @@ ul li:nth-child(3) button {
   background-image: url('../img/deer.png');
   background-repeat: no-repeat;
   background-size: cover;
-  padding: 80px;
+  background-position: 50% 0;
+  padding: 3rem;
+}
+
+.contact__form {
+  flex-direction: column;
 }
 
 .form__wrap {
   flex-wrap: wrap;
   justify-content: space-between;
+  padding: 0;
 
 }
 
 .form__item {
-  flex-basis: 48%;
   margin-bottom: 20px;
 }
 
 .form__input {
+  font-family: 'Roboto Regular';  
+  color: #FFFFFF;
+  font-size: 16px;
+  line-height: 19px;
   padding: 14px;
   border-radius: 15px;
   background: transparent;
   outline: transparent;
   border: 3px solid #FFFFFF;
   box-sizing: border-box;
-  color: 16px;
+}
+
+.form__text {
+  font-family: 'Roboto Regular';  
+  color: #FFFFFF;
+  font-size: 16px;
   line-height: 19px;
+  padding-left: 45px;
+  cursor: pointer;
+}
+
+.form__input::placeholder { 
+  color: #FFFFFF;
+  opacity: 1;
+}
+
+.form__input:-ms-input-placeholder { /* Internet Explorer 10-11 */
+  color: #FFFFFF;
+}
+
+.form__input::-ms-input-placeholder { /* Microsoft Edge */
+  color: #FFFFFF;
 }
 
 textarea { 
   width: 100%;
   resize: none; 
+  margin-bottom: 17px;
 } 
 
+input[type="checkbox"]:checked {
+  border-color: #D02B2B;
+  background-color: #D02B2B;
+}
+
+.form__label {
+  position: relative;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 15px;
+  height: 20px;
+  width: 20px;
+  background: transparent;
+  border: 2px solid #D02B2B;
+  box-sizing: border-box;
+  border-radius: 3px;
+}
+
+input:checked ~ .checkmark {
+  background-color: #ffffff;
+}
+
+input:checked ~ .form__text {
+ color: #D02B2B;
+}
+
+.checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+/* Style the checkmark/indicator */
+.container .checkmark:after {
+  left: 4px;
+  top: 2px;
+  width: 6px;
+  height: 10px;
+  border: solid #D02B2B;
+  border-width: 0 3px 3px 0;
+  -webkit-transform: rotate(45deg);
+  -ms-transform: rotate(45deg);
+  transform: rotate(45deg);
+}
+
+.container input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.form__checkbox {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
 
 
+ @media (min-width: 768px) {
+  .header__menu {
+    position: fixed;
+  }
+  .content__title {
+    font-size: 5rem;
+  }
+  .gifts__title,
+  .main__title {
+    font-size: 3.5rem;
+  }
+
+  .content__button {
+    align-self: start;
+  }
+
+  .main {
+    padding: 8rem;
+  }
+  .main__info {
+    margin-top: 0;
+   }
+  .main__img {
+    width: auto;
+  }
+}
 
 
+@media (min-width: 992px) { 
+  .single-item {
+    margin-top: 0;
+  }
+  .present__slider {
+    border: 3px solid #FFFFFF;
+    box-sizing: border-box;
+    border-radius: 20px;
+    padding: 58px 35px;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .present__img {
+    order: 2;
+  }
+
+  .dots-style {
+    left: -138%;
+    top: 75%;
+    justify-content: start;
+  }
+
+  .dots-style button {
+    width: 150px;
+    height: 150px;
+    margin-right: 32px;
+  }
+}
+
+@media (min-width: 1262px) { 
+  .dots-style {
+    left: -138%;
+    top: 60%;
+  }
+
+}

@@ -7,10 +7,6 @@ scrollDown.addEventListener('click', () => {
   fullpage_api.moveSectionDown();
 });
 
-//cloud
-
-const cloud = document.querySelector('.cloud');
-setTimeout(() => cloud.style.display = "block", 2000);
 
 
 //Burger-menu
@@ -143,7 +139,6 @@ function init() {
           )
         );
     }
-    // console.log(particles);
 }
 
 // Animation Loop
@@ -162,38 +157,19 @@ animate()
 
 
 $(document).ready(function(){
-  //FuulPage
+  //FullPage
     new fullpage('#fullpage', {
       autoScrolling: true,
     });
 
   //slider
     $('.single-item').slick({
-      arrows: true,
+      infinite: true,
+      arrows: false,
       dots: true,
+      dotsClass: 'dots-style',
     });
 
-  $('.multiple-items').slick({
-    infinite: true,
-    slidesToShow: 1,
-    slidesToScroll: 1,
-    arrows: false,
-    dots: true,
-    dotsClass: 'dots-style',
-    responsive: [{
-      breakpoint: 1025,
-      settings: {
-        slidesToShow: 2,
-        slidesToScroll: 2,
-      }
-    }, {
-      breakpoint: 480,
-      settings: {
-        slidesToShow: 1,
-        slidesToScroll: 1,
-      }
-    }]
-  });
   
   var controller = new ScrollMagic.Controller();
   $(function() {
@@ -205,30 +181,30 @@ $(document).ready(function(){
     .setPin("#pin1")
       .addTo(controller);
   });
-});
 
-//santa
+  $('select').niceSelect();
 
-const santa = document.querySelector('.main__img');
-const headerInfo = document.querySelector('.header__info');
-const presentSliders = [...document.querySelectorAll('.present__slider')];
-const presents = [...document.querySelectorAll('.present')];
-window.addEventListener('resize', () => {
-  const width = window.innerWidth;
-  if (width < 1060) {
-    santa.style.position = "relative";
-    headerInfo.style.paddingTop = "150px";
-    presentSliders.forEach(slide => slide.style.flexDirection = "column")
-    presents.forEach(present => present.style.flexDirection = "column")
-    cloud.style.display = "none";
+  if (window.innerWidth > 992) {
+    setTimeout(() => cloud.style.display = "block", 2000);
   } else {
-    santa.style.position = "absolute";
-    headerInfo.style.paddingTop = "50px";
-    presentSliders.forEach(slide => slide.style.flexDirection = "row")
-    presents.forEach(present => present.style.flexDirection = "row")
-    cloud.style.display = "block";
+    cloud.style.display = "none"
   }
+  
 });
+
+
+const cloud = document.querySelector('.cloud')
+window.addEventListener('resize', () => {
+const width = window.innerWidth;
+
+if (window.innerWidth > 1200) {
+  setTimeout(() => cloud.style.display = "block", 2000);
+} else {
+  cloud.style.display = "none"
+}
+});
+
+
 
 
 
