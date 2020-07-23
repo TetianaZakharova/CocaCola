@@ -257,7 +257,7 @@ Snowflake */
   flex-flow: column;
   align-items: center;
   height: 100%;
-  width: 50%;
+  width: 100%;
   background-color: #D02B2B;
   overflow-y: auto;
   right: -100%;
@@ -538,6 +538,10 @@ input:checked ~ .form__text {
 
 
  @media (min-width: 768px) {
+  .burger-menu__active .burger-menu__nav {
+    width: 50%;
+  }
+
   .header__menu {
     position: fixed;
   }
@@ -563,7 +567,6 @@ input:checked ~ .form__text {
     width: auto;
   }
 }
-
 
 @media (min-width: 992px) { 
   .single-item {

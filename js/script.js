@@ -8,7 +8,6 @@ scrollDown.addEventListener('click', () => {
 });
 
 
-
 //Burger-menu
 
 $('.menu-btn').on('click', function(e) {
