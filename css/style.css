@@ -323,7 +323,7 @@ canvas {
 }
 
 .gifts__title {
-  margin-top: 3rem;
+  margin-top: 4rem;
 }
 
 .gifts__text {
@@ -604,9 +604,9 @@ input:checked ~ .form__text {
     font-size: 3.5rem;
   }
 
-  .gifts__title {
+  /* .gifts__title {
     margin-top: 0;
-  }
+  } */
 
   .content__button {
     align-self: start;
