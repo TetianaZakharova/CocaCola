@@ -322,6 +322,10 @@ canvas {
   line-height: 1.5;
 }
 
+.gifts__title {
+  margin-top: 3rem;
+}
+
 .gifts__text {
   margin: 30px 0;
 }
@@ -597,6 +601,10 @@ input:checked ~ .form__text {
   .gifts__title,
   .main__title {
     font-size: 3.5rem;
+  }
+
+  .gifts__title {
+    margin-top: 0;
   }
 
   .content__button {
