@@ -206,9 +206,9 @@ Snowflake */
   -o-transition: 0.4s;
   transition: 0.4s;
 }
-.burger-menu_button:hover .burger-menu_lines {
+/* .burger-menu_button:hover .burger-menu_lines {
   filter: brightness(0.7);
-}
+} */
 
 .burger-menu_lines::before,
 .burger-menu_lines::after,
