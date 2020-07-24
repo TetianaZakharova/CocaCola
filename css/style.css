@@ -267,7 +267,7 @@ Snowflake */
   transition: 0.5s ease-in-out;
 }
 .burger-menu__active .burger-menu__nav {
-  right: 0;
+  right: 30%;
   top: 0;
   -webkit-transition: 0.5s;
   -moz-transition: 0.5s;
@@ -581,6 +581,7 @@ input:checked ~ .form__text {
  @media (min-width: 768px) {
   .burger-menu__active .burger-menu__nav {
     width: 50%;
+    right: 0;
   }
 
   .header {
