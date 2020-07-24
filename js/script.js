@@ -169,7 +169,8 @@ $(document).ready(function(){
       dotsClass: 'dots-style',
     });
 
-  
+  // custom select
+
   var controller = new ScrollMagic.Controller();
   $(function() {
     var scene = new ScrollMagic.Scene({
@@ -194,13 +195,14 @@ $(document).ready(function(){
 
 const cloud = document.querySelector('.cloud')
 window.addEventListener('resize', () => {
-const width = window.innerWidth;
+  const width = window.innerWidth;
 
-if (window.innerWidth > 1200) {
-  setTimeout(() => cloud.style.display = "block", 2000);
-} else {
-  cloud.style.display = "none"
-}
+  if (window.innerWidth >= 1200) {
+    setTimeout(() => cloud.style.display = "block", 2000);
+  } 
+  // else if (window.innerWidth < 1200) {
+  //   cloud.style.display = "none"
+  // }
 });
 
 

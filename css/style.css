@@ -191,9 +191,7 @@ Snowflake */
   to { transform: rotate(360deg); }
 }
 
-
 /* BURDER */
-
 .burger-menu_button {
   position: fixed;
   z-index: 30;
@@ -206,9 +204,6 @@ Snowflake */
   -o-transition: 0.4s;
   transition: 0.4s;
 }
-.burger-menu_button:hover .burger-menu_lines {
-  filter: brightness(0.7);
-}
 
 .burger-menu_lines::before,
 .burger-menu_lines::after,
@@ -217,10 +212,10 @@ Snowflake */
   width: 34px;
   height: 3.67px;
   background-color: #FFFFFF;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
 }
 
 .burger-menu_lines {
@@ -231,20 +226,23 @@ Snowflake */
 .burger-menu_lines::before {
   content: '';
   top: -12px;
+  left: 0;
 }
 .burger-menu_lines::after {
   content: '';
   top: 12px;
+  left: 0;
 }
-
 
 .burger-menu__active .burger-menu_lines {
   background-color: transparent;
 }
+
 .burger-menu__active .burger-menu_lines::before {
   top: 0;
   transform: rotate(45deg);
 }
+
 .burger-menu__active .burger-menu_lines::after{
   top: 0;
   transform: rotate(-45deg);
@@ -254,27 +252,29 @@ Snowflake */
   padding-top: 120px;
   position: fixed;
   top: 0;
+  right: -100%;
   z-index: 20;
   display: flex;
   flex-flow: column;
   align-items: center;
   height: 100%;
   width: 100%;
-  background-color: #D02B2B;
   overflow-y: auto;
-  right: -100%;
-  -webkit-transition: 0.8s;
-  -moz-transition: 0.8s;
-  -o-transition: 0.8s;
-  transition: 0.8s;
+ 
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
 .burger-menu__active .burger-menu__nav {
   right: 0;
-  -webkit-transition: 0.4s;
-  -moz-transition: 0.4s;
-  -o-transition: 0.4s;
-  transition: 0.4s;
+  top: 0;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s ease-in-out;
 }
+
 .burger-menu__link {
   padding: 18px 35px;
   font-family: 'Risque Regular';
@@ -292,7 +292,6 @@ Snowflake */
   color:  #141429;
   filter: brightness(0.9);
 }
-
  
 canvas {
   height: 100%;
@@ -300,7 +299,6 @@ canvas {
 }
 
 /* MAIN PAGE */
-
 .main {
   padding: 3rem;
 }
@@ -361,7 +359,6 @@ canvas {
 }
 
 /* CAROUSEL */
-
 .single-item {
   margin-top: 125px;
 }
@@ -408,7 +405,7 @@ ul li:nth-child(3) button {
   background-image: url("../img/newYearBag.png"); 
 }
 
-/* //CONTACTS */
+/* CONTACTS */
 .contact {
   font-family: 'Risque Regular';
   background-image: url('../img/deer.png');
@@ -538,6 +535,44 @@ input:checked ~ .form__text {
   width: 0;
 }
 
+.circular-menu .floating-btn {
+  display: block;
+  width: 4em;
+  height: 4em;
+  border-radius: 50% 0 50% 50%;
+  background-color: #D02B2B;
+  color: hsl(0, 0%, 100%);
+  text-align: center;
+  line-height: 3.9;
+  cursor: pointer;
+  outline: 0;
+}
+
+.circular-menu .floating-btn i {
+  font-size: 1.3em;
+  transition: transform .2s;  
+}
+
+.circular-menu.active .floating-btn i {
+  transform: rotate(-45deg);
+}
+
+.circular-menu:after {
+  display: block;
+  content: ' ';
+  width: 3.5em;
+  height: 3.5em;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  background-color: #D02B2B;
+  transition: all .3s ease;
+}
+
+.circular-menu.active:after {
+  transform: scale3d(25, 25, 1);
+}
 
  @media (min-width: 768px) {
   .burger-menu__active .burger-menu__nav {
@@ -546,7 +581,7 @@ input:checked ~ .form__text {
 
   .header {
     position: fixed;
-    z-index: 2;
+    z-index: 31;
     margin: 24px auto;
     left: 0;
     right: 0;
@@ -614,5 +649,5 @@ input:checked ~ .form__text {
     left: -138%;
     top: 60%;
   }
-
 }
+
